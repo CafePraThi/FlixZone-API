@@ -1,9 +1,9 @@
 from django.urls import path
-from genres.views import GenreCreateListView, GenreRetrieveUpdateDestroyView
+from . import views
 
 app_name='Genre'
 
 urlpatterns = [
-    path('', GenreCreateListView.as_view(), name='GenreCreateListView'),
-    path('<int:pk>', GenreRetrieveUpdateDestroyView.as_view(), name='GenreRetrieveUpdateDestroyView'),
+    path('genres/', views.GenreCreateListView.as_view(), name='GenreCreateListView'),
+    path('genres/<int:pk>', views.GenreRetrieveUpdateDestroyView.as_view(), name='GenreRetrieveUpdateDestroyView'),
 ]

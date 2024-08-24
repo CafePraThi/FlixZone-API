@@ -4,6 +4,6 @@ from reviews.views import ReviewListCreateAPIView, ReviewRetrieveUpdateDestroyAP
 app_name='Reviews'
 
 urlpatterns = [
-    path('', ReviewListCreateAPIView.as_view(), name='ReviewListCreateAPIView'),
-    path('<int:pk>', ReviewRetrieveUpdateDestroyAPIView.as_view(), name='ReviewRetrieveUpdateDestroyAPIView'),
+    path('reviews/', ReviewListCreateAPIView.as_view(), name='ReviewListCreateAPIView'),
+    path('reviews/<int:pk>', ReviewRetrieveUpdateDestroyAPIView.as_view(), name='ReviewRetrieveUpdateDestroyAPIView'),
 ]

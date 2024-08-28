@@ -4,9 +4,14 @@ from datetime import date
 
 
 class MovieSerializer(serializers.ModelSerializer):
+    rate = serializers.SerializerMethodField(read_only=True)
+
     class Meta:
         model = Movie
         fields = '__all__'
+
+    def get_rate(self, obj):
+        return 5
 
     def validate_release_date(self, value):
         if value.year < 1990:
